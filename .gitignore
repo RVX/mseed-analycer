@@ -1,0 +1,10 @@
+mseed-analycer/
+__pycache__/
+*.pyc
+*.pyo
+*.exe
+*.dll
+*.so
+*.dylib
+.ipynb_checkpoints/
+sonifications/
