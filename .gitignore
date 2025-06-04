@@ -6,5 +6,7 @@ __pycache__/
 *.dll
 *.so
 *.dylib
+*.bat
 .ipynb_checkpoints/
 sonifications/
+tests/
