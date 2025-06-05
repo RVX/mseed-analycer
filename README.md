@@ -115,6 +115,6 @@ CC-BY-NC-SA 4.0
 
 ## 👤 Author
 
-Coded By [@Victor Mazon Gardoqui](https://github.com/rvx) (May 2025)  
-Thanks to Julian Charrière, Deborah Kelley, Joe Duprey, Bret Nestor
+Coded By [@Victor Mazon Gardoqui](https://victormazon.com) (May 2025)  
+Thanks to Julian Charrière, epsylon, Deborah Kelley, Joe Duprey, Bret Nestor among others.
 
