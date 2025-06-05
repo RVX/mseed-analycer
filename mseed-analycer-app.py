@@ -12,6 +12,22 @@ import datetime
 import re
 import os
 
+def cleanup_old_sonifications(folder="sonifications", days=7):
+    """Delete files in the sonifications folder older than `days` days."""
+    folder_path = os.path.join(os.path.dirname(__file__), folder)
+    if not os.path.exists(folder_path):
+        return
+    now = time.time()
+    cutoff = now - days * 86400  # 86400 seconds in a day
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        if os.path.isfile(file_path):
+            if os.path.getmtime(file_path) < cutoff:
+                try:
+                    os.remove(file_path)
+                except Exception as e:
+                    print(f"Could not delete {file_path}: {e}")
+
 st.set_page_config(page_title="MiniSEED Analyzer", layout="wide")
 st.title("📈 MiniSEED File Analyzer for Midnight Zone Mirror Room")
 st.markdown("Upload a `.mseed` file or fetch from OOI database to explore seismic data.")
@@ -202,3 +218,7 @@ uploaded_file = st.file_uploader("Upload a MiniSEED file", type=["mseed"])
 if uploaded_file is not None:
     # You can add your local file handling code here, similar to the remote logic above
     pass
+
+cleanup_old_sonifications("sonifications", days=7)
+output_dir = os.path.join(os.path.dirname(__file__), "sonifications")
+os.makedirs(output_dir, exist_ok=True)

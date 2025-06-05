@@ -41,7 +41,7 @@ A Streamlit web app and CLI tool to fetch, merge, and export hydrophone MiniSEED
 ### Web App
 
 1. Clone or download this repository.
-2. (Optional) Create and activate a virtual environment.
+2. (Optional) Create and activate a virtual environment. ---> .\mseed-analycer\Scripts\Activate
 3. Install dependencies with `pip install -r requirements.txt`.
 4. Install ffmpeg and add it to your system PATH for MP3 export.
 5. Run the app:
@@ -62,12 +62,12 @@ The CLI script will automatically process all 5 OOI hydrophone locations for **t
 
 **Export as WAV:**
 ```sh
-python mseed-analycer-cli.py --num-files 14 --export-format WAV
+python mseed-analycer-cli.py --num-files 12 --export-format WAV
 ```
 
-**Export as MP3:**
+**Export as MP3 320kbps:**
 ```sh
-python mseed-analycer-cli.py --num-files 14 --export-format MP3
+python mseed-analycer-cli.py --num-files 12 --export-format MP3
 ```
 
 - Output files are saved in the `sonifications` folder.
